@@ -1,5 +1,5 @@
 # KCongress_Competition_2023
-
+- notion [link](https://emphasized-leech-c56.notion.site/K-Congress-Data-Competition-3762258f913047dd9bfb563a6c3b4cd3?pvs=4)
 ## MLOPS & Entire Work Flow
 ![image](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/eebee5ce-db47-40aa-9b67-223814dd2080)
 
