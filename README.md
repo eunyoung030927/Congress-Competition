@@ -12,7 +12,7 @@
 ![image](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/031e91fe-00a3-4bf3-8d61-1bcce8beef89)
 
 ### 3. Public Petition Standardization System
-![image](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/f017b8c7-9e1e-4263-a00b-f69400069199)
+![스크린샷 2023-11-22 오후 3 22 22](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/84381997-29b3-451b-a2fd-8d810527d13f)
 
 ### 4.Legislator Matching System
 ![image](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/9450bf12-2c81-4708-93eb-4fe321465fc5)
