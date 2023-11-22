@@ -17,6 +17,7 @@
 ### 4.Legislator Matching System
 ![image](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/9450bf12-2c81-4708-93eb-4fe321465fc5)
 
+
 #### Introduction
 이 보고서는 국회의 텍스트 데이터를 활용하여 사용자에게 맞춤형 정보를 제공하는 웹사이트 개발에 관한 프로젝트의 세부 계획과 절차를 자세히 설명합니다.<br>
 본 프로젝트는 Python 언어를 기반으로 하여, 효율적인 데이터 처리와 사용자 친화적인 경험을 제공하기 위해 FastAPI 및 Streamlit을 사용합니다.<br>
