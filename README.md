@@ -2,7 +2,7 @@
 - notion [link](https://emphasized-leech-c56.notion.site/K-Congress-Data-Competition-3762258f913047dd9bfb563a6c3b4cd3?pvs=4)
   
 ## MLOPS & Entire Work Flow
-![image](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/df287947-1775-4d13-9e08-64baae131892)
+![스크린샷 2023-11-22 오후 4 42 03](https://github.com/sparkerhoney/Congress_Competition/assets/108461006/570f60bf-df72-4c19-9411-1e6b0ff471a6)
 
 ## Key System for our Project
 ### 1. Reference Material Recommendation System
