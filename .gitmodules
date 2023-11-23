@@ -1,3 +1,0 @@
-[submodule "streamlit-agent"]
-	path = streamlit-agent
-	url = https://github.com/langchain-ai/streamlit-agent.git
