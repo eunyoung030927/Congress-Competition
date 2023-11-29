@@ -151,15 +151,27 @@ def main():
         top_indices = cosine_sim.topk(5).indices.numpy()  # Convert to numpy array to use as index
 
         # Display results
+        # for index in top_indices:
+        #     # title = df.iloc[index]['제목']
+        #     title = df.iloc[index]['제목'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
+        #     content = df.iloc[index]['내용'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
+        #     # st.write(f"### {title}")
+        #     st.write(title + content)
+        #     st.write("------")
+        #     # st.write(content)
+        #     # st.write("------")
         for index in top_indices:
-            # title = df.iloc[index]['제목']
+        # title = df.iloc[index]['제목']
             title = df.iloc[index]['제목'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
             content = df.iloc[index]['내용'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
-            # st.write(f"### {title}")
-            st.write(title + content)
+
+            st.markdown(
+                f"""
+                ### {title}
+                {content}
+                """
+            )
             st.write("------")
-            # st.write(content)
-            # st.write("------")
 
 if __name__ == '__main__':
     main()
