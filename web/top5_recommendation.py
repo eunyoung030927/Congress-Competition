@@ -160,18 +160,25 @@ def main():
         #     st.write("------")
         #     # st.write(content)
         #     # st.write("------")
-        for index in top_indices:
-        # title = df.iloc[index]['제목']
-            title = df.iloc[index]['제목'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
-            content = df.iloc[index]['내용'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
 
-            st.markdown(
-                f"""
-                ### {title}
-                {content}
-                """
-            )
-            st.write("------")
+        # for index in top_indices:
+        # # title = df.iloc[index]['제목']
+        #     title = df.iloc[index]['제목'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
+        #     content = df.iloc[index]['내용'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
+
+        #     st.markdown(
+        #         f"""
+        #         ### {title}
+        #         {content}
+        #         """
+        #     )
+        #     st.write("------")
+        # Display results
+        for index in top_indices.numpy():  # Assuming top_indices is a tensor, convert it to numpy array
+            title = df.iloc[index].제목  # Assuming '제목' is the column name for titles
+            content = df.iloc[index].내용.replace('\\n', '\n')  # Replace escaped newlines with actual newlines and assuming '내용' is the column name for contents
+            # Displaying the title and content in a formatted way
+            st.markdown(f"#### {title}\n{content}\n---")
 
 if __name__ == '__main__':
     main()
