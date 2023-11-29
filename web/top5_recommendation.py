@@ -152,11 +152,14 @@ def main():
 
         # Display results
         for index in top_indices:
-            title = df.iloc[index]['제목']
+            # title = df.iloc[index]['제목']
+            title = df.iloc[index]['제목'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
             content = df.iloc[index]['내용'].replace('\\n', '\n')  # Replace '\\n' with actual newlines
-            st.write(f"### {title}")
-            st.write(content)
+            # st.write(f"### {title}")
+            st.write(title + content)
             st.write("------")
+            # st.write(content)
+            # st.write("------")
 
 if __name__ == '__main__':
     main()
