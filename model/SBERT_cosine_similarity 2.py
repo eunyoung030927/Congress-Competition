@@ -6,7 +6,11 @@ import pandas as pd
 # 파일을 읽어오는 부분
 sentences1 = pd.read_csv("/Users/lhe339/Documents/GitHub/Congress_Competition/DB/law_list/law_list.csv")
 sentences1 = sentences1["내용"]
-sentences2 = "경찰의 직위해제에 관한 법률"
+sentences2 = """나라에 성폭력 피해자들의 보호를 위한 법률안으로
+
+'성폭력 보호 및 지원 방안 제정법'을 마련하고, 이를 국회가 채택하고 국민에게 새로운 보호장치를 제공하고자 합니다.
+
+이 법률에 의해 보호자가 배정되고 당해 사건에 민원 및 피해자를 보호하기 위해 법률 상 여러 조치도 가능하도록 하여야 합니다. 또한 경찰에 대한 강력한 책임을 맡게 하고, 경찰이 성폭력 피해자들과 상대방들을 적극적으로 보호하고 도움을 줄 수 있도록 규정하는 것 등이 포함되어야 합니다."""
 
 # 토크나이저와 모델 로드
 tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
