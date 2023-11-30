@@ -123,20 +123,16 @@ import os
 import tempfile
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
-# 기타 필요한 임포트
 
-# 기존 클래스 및 함수 정의 ...
 
 def main():
     st.title("🦜 LangChain: Chat with Documents")
 
-    # OpenAI API Key 입력
     openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
     if not openai_api_key:
         st.info("Please add your OpenAI API key to continue.")
         st.stop()
 
-    # PDF 파일 업로드 처리
     uploaded_files = st.sidebar.file_uploader(
         label="Upload PDF files", type=["pdf"], accept_multiple_files=True
     )
@@ -144,10 +140,8 @@ def main():
         st.info("Please upload PDF documents to continue.")
         st.stop()
 
-    # 리트리버 구성 및 설정
     retriever = configure_retriever(uploaded_files)
 
-    # 대화 기록 및 LLM 설정
     msgs = StreamlitChatMessageHistory()
     memory = ConversationBufferMemory(memory_key="chat_history", chat_memory=msgs, return_messages=True)
 
@@ -158,7 +152,6 @@ def main():
         llm, retriever=retriever, memory=memory, verbose=True
     )
 
-    # 대화 기록 및 메시지 처리
     if len(msgs.messages) == 0 or st.sidebar.button("Clear message history"):
         msgs.clear()
         msgs.add_ai_message("How can I help you?")
@@ -167,7 +160,6 @@ def main():
     for msg in msgs.messages:
         st.chat_message(avatars[msg.type]).write(msg.content)
 
-    # 사용자 채팅 입력 처리
     if user_query := st.chat_input(placeholder="Ask me anything!"):
         st.chat_message("user").write(user_query)
 

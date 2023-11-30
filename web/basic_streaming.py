@@ -44,8 +44,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import ChatMessage
 import streamlit as st
 
-# 기존 클래스 및 함수 정의 ...
-
 def main():
     with st.sidebar:
         openai_api_key = st.text_input("OpenAI API Key", type="password")
