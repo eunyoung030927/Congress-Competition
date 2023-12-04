@@ -36,6 +36,7 @@ Congress-Competition/
     └── top5_recommendation.py
 ```
 
+# How to use
 ## Web Implementation
 ```bash
 $ chmod +x run.sh
