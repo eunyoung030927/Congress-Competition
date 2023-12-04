@@ -17,14 +17,18 @@ Congress-Competition/
 ├── model
 │   ├── Embedding.py
 │   ├── README.md
-│   ├── SBERT_cosine_similarity 2.py
+│   ├── SBERT.py
 │   ├── SBERT_cosine_similarity.py
 │   └── cosine_similarity.ipynb
-├── requirememnts.txt
+├── requirements.txt
 ├── run.sh
 ├── streamlit-agent
 └── web
     ├── README.md
+    ├── __pycache__
+    │   ├── basic_streaming.cpython-311.pyc
+    │   ├── chat_with_documents.cpython-311.pyc
+    │   └── top5_recommendation.cpython-311.pyc
     ├── app.py
     ├── basic_streaming.py
     ├── chat_with_documents.py
