@@ -36,7 +36,6 @@ Congress-Competition/
 ```bash
 $ chmod +x run.sh
 $ sh run.sh
-
 ```
 
 ### MLOPS & Entire Work Flow
