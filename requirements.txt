@@ -4,3 +4,4 @@ pandas==1.5.3
 torch==2.0.1
 transformers==4.33.1
 matplotlib==3.7.1
+openai==0.28.0
