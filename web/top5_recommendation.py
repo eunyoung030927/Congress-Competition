@@ -34,7 +34,7 @@ def get_openai_response(prompt, api_key):
     else:
         openai.api_key = os.getenv('OPENAI_API_KEY')
     response = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",  
+        model="gpt-3.5-turbo",  #gpt-4-1106-preview
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
