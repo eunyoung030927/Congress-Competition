@@ -1,6 +1,6 @@
 import streamlit as st
-from basic_streaming import main as basic_streaming_main
-from chat_with_documents import main as chat_with_documents_main
+# from basic_streaming import main as basic_streaming_main
+# from chat_with_documents import main as chat_with_documents_main
 from top5_recommendation import main as top5_recommendation
 import sys
 import os
