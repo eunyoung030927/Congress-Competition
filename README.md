@@ -76,8 +76,6 @@ FastAPI를 통해 강력하고 민첩한 백엔드 시스템을 구축하고, St
 
 <br>
 <br>
-<br>
-
 ---
 
 > `Project Owner : Honey`
