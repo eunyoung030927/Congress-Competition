@@ -6,6 +6,7 @@
 
 > ![스크린샷 2023-12-05 오후 4 24 24](https://github.com/sparkerhoney/Congress-Competition/assets/108461006/6ba7d0c4-35a4-4f69-8593-8299902a39e7)
 
+
 ## Contents Progress
 ```bash
 Congress-Competition/
