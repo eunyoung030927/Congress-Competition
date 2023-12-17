@@ -43,26 +43,16 @@ def get_openai_response(prompt, api_key):
     return response.choices[0].message['content'].strip()
 
 def get_legislator_persona(user_problem, similar_laws, api_key):
-    prompt = f"사용자가 제출한 문제와 식별된 상위 5개의 유사한 법률을 기반으로 이 문제를 챔피언할 국회의원의 페르소나를 만듭니다. 
+    prompt = f"""사용자가 제출한 문제와 식별된 상위 5개의 유사한 법률을 기반으로 이 문제를 챔피언할 국회의원의 페르소나를 만듭니다. 
     그들의 정책 방향, 공약 및 유권자에 대한 어필 전략을 포함하세요. 
     페르소나가 시민의 필요와 제공된 입법적 맥락과 조화를 이루도록 합니다.\n\n사용자 문제: {user_problem}\n식별된 유사한 법률: {similar_laws}\n\n입법 환경에서 이러한 문제를 효과적으로 옹호할 수 있는 필요한 특성을 가진 페르소나를 생성하세요. 이름은 생성하면 안됨.
     아래 예시를 참고해서 작성하세요.
-    
-    예시
-    보고서 제목:
-    보고서 작성일자:
+    ### 예시
+    국회의원 페르소나:
     관련 부처:
-    제안 법안 명칭: 
-    법안 목적:
-    법안 내용:
-    1.
-    2.
-    3.
-    ..
-    발의의 이유 및 원인: 
-    해결 방안: 
-    앞으로의 전략: 
-    "
+    제안 법안 명칭:
+    페르소나의 목적:
+    """
     persona = get_openai_response(prompt, api_key)
     return persona
 
@@ -75,7 +65,22 @@ def main():
     if 'generated_context' not in st.session_state:
         if st.button('Generate Legislation Context', key='generate_context'):
             if user_problem:
-                prompt = f"너는 한국어로 {user_problem}값을 받아서 국회 법안을 발의 하는 ai야. 너가 뭘했다라고 먼저 얘기하지 말고 보고서 형식으로만 출력해. A4 한장 분량으로 {user_problem}을 국회에 입법하게 할 법안으로 만들어줘. 들어가야하는 내용은 법안의 제목, 목적, 내용, 발의의 이유 및 원인, 해결방안, 앞으로의 전략 등이야."
+                prompt = f"""너는 한국어로 {user_problem}값을 받아서 국회 법안을 발의 하는 ai야. 너가 뭘했다라고 먼저 얘기하지 말고 보고서 형식으로만 출력해. A4 한장 분량으로 {user_problem}을 국회에 입법하게 할 법안으로 만들어줘. 들어가야하는 내용은 법안의 제목, 목적, 내용, 발의의 이유 및 원인, 해결방안, 앞으로의 전략 등이야.
+                    아래 예시를 참고해서 작성하세요.
+                    ### 예시
+                    보고서 제목:
+                    보고서 작성일자:
+                    관련 부처:
+                    제안 법안 명칭: 
+                    법안 목적:
+                    법안 내용:
+                    1.
+                    2.
+                    3.
+                    ..
+                    발의의 이유 및 원인: 
+                    해결 방안: 
+                    앞으로의 전략: """
                 context = get_openai_response(prompt, api_key)
                 st.session_state['generated_context'] = context
                 st.markdown("#### Generated context for legislation:")
