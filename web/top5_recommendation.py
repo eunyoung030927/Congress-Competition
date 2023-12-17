@@ -34,7 +34,7 @@ def get_openai_response(prompt, api_key):
     else:
         openai.api_key = os.getenv('OPENAI_API_KEY')
     response = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",  #gpt-3.5-turbo
+        model="gpt-3.5-turbo",  # gpt-3.5-turbo # gpt-4-1106-preview
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
@@ -43,7 +43,26 @@ def get_openai_response(prompt, api_key):
     return response.choices[0].message['content'].strip()
 
 def get_legislator_persona(user_problem, similar_laws, api_key):
-    prompt = f"사용자가 제출한 문제와 식별된 상위 5개의 유사한 법률을 기반으로 이 문제를 챔피언할 국회의원의 페르소나를 만듭니다. 그들의 정책 방향, 공약 및 유권자에 대한 어필 전략을 포함하세요. 페르소나가 시민의 필요와 제공된 입법적 맥락과 조화를 이루도록 합니다.\n\n사용자 문제: {user_problem}\n식별된 유사한 법률: {similar_laws}\n\n입법 환경에서 이러한 문제를 효과적으로 옹호할 수 있는 필요한 특성을 가진 페르소나를 생성하세요. 이름은 생성하면 안됨."
+    prompt = f"사용자가 제출한 문제와 식별된 상위 5개의 유사한 법률을 기반으로 이 문제를 챔피언할 국회의원의 페르소나를 만듭니다. 
+    그들의 정책 방향, 공약 및 유권자에 대한 어필 전략을 포함하세요. 
+    페르소나가 시민의 필요와 제공된 입법적 맥락과 조화를 이루도록 합니다.\n\n사용자 문제: {user_problem}\n식별된 유사한 법률: {similar_laws}\n\n입법 환경에서 이러한 문제를 효과적으로 옹호할 수 있는 필요한 특성을 가진 페르소나를 생성하세요. 이름은 생성하면 안됨.
+    아래 예시를 참고해서 작성하세요.
+    
+    예시
+    보고서 제목:
+    보고서 작성일자:
+    관련 부처:
+    제안 법안 명칭: 
+    법안 목적:
+    법안 내용:
+    1.
+    2.
+    3.
+    ..
+    발의의 이유 및 원인: 
+    해결 방안: 
+    앞으로의 전략: 
+    "
     persona = get_openai_response(prompt, api_key)
     return persona
 
